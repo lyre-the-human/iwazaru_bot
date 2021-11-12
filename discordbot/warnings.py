@@ -2,33 +2,32 @@ import re
 from typing import Optional
 
 WARNINGS = {
-    # Sexist/exclusionary language
-    r'\b(females)\b': 'pretty objectifying. If you are referring to women, use that instead',
-    r'\b(hysterical)\b': 'sexist language. Some alternatives: hilarious, funny',
-    r'\b(bimbo|bitch|cunt|hag|slut|twat|whore)\b': 'sexist language',
-    # LGBT-related slurs
-    r'\b(sissy|pansy|sodomite|poofter|pillow-biter|fudgepacker|cocksucker|fag|faggot|flamer|ponce|tapette|nola|quean|jocker|poove|woofter)\b': 'a homophobic word or slur used against gay men',
-    r'\b(dyke|lesbo)\b': 'a homophobic slur used against gay women',
-    r'\b(fauxbian)\b': 'a biphobic slur used against bisexual women',
-    r'\b(tranny|trannie|shim|heshe|shehe|she-man|sheman|transtrender|cuntboy|hefemale|shemale|dickgirl|ladyboy|trans-identified)\b': 'A slur or derogatory way of referring to transgender people',
-    r'\b(hermie)\b': 'A slur for intersex people',
-    r'\b(transvestite)\b': 'a slur for cross-dressers',
-    # Mental conditions
-    r'\b(stupid|retarded|idiotic)\b': 'ableist language. Some alternatives: pathetic, uninspiring, vapid, obtuse, silly',
-    r'\b(crazy|insane|bonkers)\b': 'ableist language. Some alternatives: ludicrous, wild, ridiculous, absurd, chaotic, silly, nonsensical, unreal, unbelievable',
-    r'\b(mad)\b': 'ableist language. Some alternatives: angry, furious, annoyed',
-    r'\b(idiot|idiotic|imbecile|moron|retard|lunatic)\b': 'ableist language. Some alternatives: uninformed, ignorant, incorrect, wrong',
-    r'\b(cretin|midget|freak|nutter|schizo|tard|spaz)\b': 'ableist language. check out some alternatives! <http://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html> (scroll down)',
-    r'\b(sperg|autist)\b': 'a slur against autistic people',
-    # Physical conditions
+    r'\b(hunty|werk|yass|gawd|kont)\b': 'a word which originates with queer AAVE but has been misappropriated.',
+    
+    # Ableism and Saneism
+    r'\b(stupid|stupidity)\b': 'ableist language. Some alternatives: pathetic, uninspiring, vapid, obtuse, silly',
+    r'\b(crazy|craziness)\b': 'ableist language. Some alternatives are ludicrous, wild, ridiculous, absurd, chaotic, silly, nonsensical, unreal, unbelievable',
+    r'\b(insane|insanity)\b': 'ableist language. Some alternatives: ludicrous, wild, ridiculous, absurd, chaotic, silly, nonsensical, unreal, unbelievable',
+    r'\b(idiot|idiots|idiotic|imbecile|moron|moronic|lunatic|lunacy)\b': 'ableist language. Some alternatives: uninformed, ignorant, incorrect, wrong',
+    r'\b(cretin|midget|spazzed|spazzing|spaz|bonkers)\b': 'ableist language. check out some alternatives! <http://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html> (scroll down)',
+    r'\b(ree|reee|reeee|reeeee)\b': 'a slur against autistic people',
+    r'\b(derp|hurr|durr|hurrdurr)\b': 'ableist language.',
+    r'\b(delusional|deluded)\b': 'ableist language. Some alternatives: misguided, misinformed, ignorant',
+    r'\b(mad lad|mad lass|madman)\b': 'ableist language. Some alternatives: wild, chaotic, unbelievable, brave, ill-advised',
+    r'\b(narcissistic|narcissist)\b': 'ableist language. Some alternatives: self-centred, egotistical, self-absorbed',
+    
+
     r'\b(dumb)\b': 'ableist language. Some alternatives: silly, foolish, ignorant, uninformed, ridiculous, pathetic, absurd',
     r'\b(lame)\b': 'ableist language. Some alternatives: silly, foolish, ridiculous, pathetic, absurd, uncool',
-    r'\b(cripple|crippled|crip)\b': 'ableist language. Some alternatives: broken, not working',
-    # Racism
-    r'\b(gypsy|gipp|pikey|piky)\b': 'a racial slur against the Romani people.',
-    r'\b(beaner|beaney|tacohead|wetback)\b': 'a racial slur for Mexican/mestizo people',
-    r'\b(chink|chonky|jap|dothead|gook|gooky|nip|slant-eye|slopehead|slopey|sloper|zipperhead)\b': 'a racial slur against Asians',
-    r'\b(guido|wop)\b': 'a racial slur for Italians',
+    r'\b(cripple|crippled|crip|crippling)\b': 'ableist language. Some alternatives: broken, not working',
+    r'\b(gimp|gimped|gimping)\b': 'ableist language. Some alternatives: nerf, sabotage',
+    r'\b(brain-dead|smallbrain|small-brained|smallbrained)\b': 'ableist language. Some alternatives: nerf, sabotage',
+    r'\b(special needs|special-needs)\b': 'language rejected by the disabled community. Some alternatives: disabled, developmentally disabled, cognitively disabled, accessibility',
+    # Racism and xenophobia
+    r'\b(gypsy|gipp|gyp|pikey|piky)\b': 'a racial slur against the Romani people.',
+    r'\b(somali)\b': 'a racial slur against Somalian people.',
+    r'\b(afghani)\b': 'a racial slur against Afghan people.',
+    r'\b(eskimo)\b': 'a racial slur rejected by most Inuit and Yupik communities.',
     r'\b(gusano)\b': 'a racial slur for Cubans that fled the Cuban Revolution',
     r'\b(injun|nitchie|neche|neechee|neejee|nitchy|nitchee|nidge|redskin|squaw)\b': 'a racial slur for Native Americans',
     r'\b(kanaka)\b': 'a racial slur for Pacific Islanders',
@@ -37,22 +36,30 @@ WARNINGS = {
     r'\b(polack|polak|polock)\b': 'a racial slur for people of Polish or Slavic origin',
     r'\b(portagee)\b': 'a racial slur for people of Portugese origin',
     r'\b(russki)\b': 'a slur for people of Russian origin',
-    r'\b(spic|spick|spik|spig|spigotty)\b': 'a racial slur for a person of Hispanic descent',
-    r'\b(wigger|whigger|wigga)\b': 'a racial slur against white people perceived to be "acting black"',
     r'\b(paki|pakki|pak)\b': 'a slur against Pakistanis and Middle-Easterners in general',
-    r'\b(nigger|nigga|niggress|nigette|niglet|nig|nigor|nigra|nigre|nigar|niggur|niggah|niggar|nigguh|negro|negroid|groid|coon|coons|burrhead|bluegum|golliwog|kaffir|kaffer|kafir|kaffre|kuffar|mau-mau|mouli|mulignan|mulignon|moolinyan|pickaninny|quashie|rastus|sheboon|spearchucker|thicklips|wog)\b': 'a racial slur against black people.',
+    r'\b(kaffir|kaffer|kafir|kaffre|kuffar)\b': 'a racial slur against black people.',
+
+    r'\b(pc master race)\b': 'a phrase with nazi origins. Consider choosing an alternative.',
+    
+    r'\b(sold down the river)\b': 'a phrase with antiBlack racist origins. Some alternatives are: abandoned, betrayed, backstabbed',
+    r'\b(grandfather clause)\b': 'a phrase with antiBlack racist origins. Some alternatives are: legacy clause, pre-existing arrangement',
+    r'\b(lynch mob)\b': 'a phrase with antiBlack racist origins. Some alternatives are: angry mob, outcry',
+    
+    r'\b(on the warpath)\b': 'a phrase with anti-Indigenous racist origins. Some alternatives are: angry, aggressive, belligerent, enraged',
+    r'\b(bury the hatchet)\b': 'a phrase with anti-Indigenous racist origins. Some alternatives are: make peace, forgive, let bygones be bygones',
+
+    r'\b(spirit animal)\b': 'a misappropriated Indigenous concept. Some alternatives are: kin, kintype, saying that you relate to that animal, saying that you are that animal',
     r'\b(savage)\b': "a word that has racist roots in colonial violence against indigenous peoples and shouldn't be used. Some alternatives are: ridiculous, absurd, ruthless, brutal, rough, wild.",
-    # Ethno-religious identity
-    r'\b(mussie|haji|hajji|hodgie|raghead|towelhead|mohammedan)\b': 'a slur against Muslim people and people whose appearance leads them to be perceived as Muslim like Sikhs',
-    r'\b(ayrab|a-rab)\b': 'intentional mispelling of an Arab person meant as a slur',
-    r'\b(christ-killer|heeb|hebe|kike|jewboy|sheeny|shylock|yid|yakubian)\b': 'a slur for Jews',
-    # catchall ableist (No suggestions)
-    r'\b(psycho|schitzo|schizo|spaz|derp|spastic|spacker)\b': 'ableist language. check out some alternatives! <http://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html> (scroll down)',
+    r'\b(pariah)\b': 'a casteist slur. Some alternatives are: outsider, persona non grata, outcast',
+    r'\b(illegal immigrant|illegal alien)\b': 'xenophobic phrasing. Some alternatives are: undocumented immigrant, undocumented person ',
+
+ # catchall ableist (No suggestions)
+    r'\b(psycho|psychotic|psychopath|sociopath|maniac|demented)\b': 'ableist language. check out some alternatives! <http://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html> (scroll down)',
 }
 
-GUYS_RESPONSE = """Many people feel excluded when you refer to a group of people as "Guys".
-Some alternatives if you meant to refer to explicitly men: men, dudes
-Some alternatives if you meant to refer to people in general: all, everyone, friends, folks, people"""
+#GUYS_RESPONSE = """Many people feel excluded when you refer to a group of people as "Guys".
+#Some alternatives if you meant to refer to explicitly men: men, dudes
+#Some alternatives if you meant to refer to people in general: all, everyone, friends, folks, people"""
 
 
 def parse_message(text: str) -> Optional[str]:
@@ -61,7 +68,7 @@ def parse_message(text: str) -> Optional[str]:
         if m:
             return 'gentle reminder: {} is {}'.format(m.group(0), WARNINGS[key])
 
-    if re.search(r'\b(hey|hi|you)\W+(guys)\b', text, re.IGNORECASE):
-        return GUYS_RESPONSE
+   # if re.search(r'\b(hey|hi|you)\W+(guys)\b', text, re.IGNORECASE):
+      #  return GUYS_RESPONSE
 
     return None
