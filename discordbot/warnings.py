@@ -5,23 +5,23 @@ WARNINGS = {
     r'\b(hunty|werk|yass|gawd|kont)\b': 'a word which originates with queer AAVE but has been misappropriated.',
     
     # Ableism and Saneism
-    r'\b(stupid|stupidity)\b': 'ableist language. Some alternatives: pathetic, uninspiring, vapid, obtuse, silly',
-    r'\b(crazy|craziness)\b': 'ableist language. Some alternatives are ludicrous, wild, ridiculous, absurd, chaotic, silly, nonsensical, unreal, unbelievable',
-    r'\b(insane|insanity)\b': 'ableist language. Some alternatives: ludicrous, wild, ridiculous, absurd, chaotic, silly, nonsensical, unreal, unbelievable',
-    r'\b(idiot|idiots|idiotic|imbecile|moron|moronic|lunatic|lunacy)\b': 'ableist language. Some alternatives: uninformed, ignorant, incorrect, wrong',
+    r'\b(stupid|stupidity|stupidness|stupider)\b': 'ableist language. Some alternatives: pathetic, uninspiring, vapid, obtuse, silly',
+    r'\b(crazy|craziness|crazier|crazies)\b': 'ableist language. Some alternatives are ludicrous, wild, ridiculous, absurd, chaotic, silly, nonsensical, unreal, unbelievable',
+    r'\b(insane|insanity|insanest)\b': 'ableist language. Some alternatives: ludicrous, wild, ridiculous, absurd, chaotic, silly, nonsensical, unreal, unbelievable',
+    r'\b(idiot|idiots|idiotic|imbecile|imbeciles|moron|morons|moronic|lunatic|lunatics|lunacy)\b': 'ableist language. Some alternatives: uninformed, ignorant, incorrect, wrong',
     r'\b(cretin|midget|spazzed|spazzing|spaz|bonkers)\b': 'ableist language. check out some alternatives! <http://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html> (scroll down)',
     r'\b(ree|reee|reeee|reeeee)\b': 'a slur against autistic people',
     r'\b(derp|hurr|durr|hurrdurr)\b': 'ableist language.',
     r'\b(delusional|deluded)\b': 'ableist language. Some alternatives: misguided, misinformed, ignorant',
     r'\b(mad lad|mad lass|madman)\b': 'ableist language. Some alternatives: wild, chaotic, unbelievable, brave, ill-advised',
     r'\b(narcissistic|narcissist)\b': 'ableist language. Some alternatives: self-centred, egotistical, self-absorbed',
-    
+    r'\b(narcissistic abuse)\b': 'ableist language which contributes to an already highly-stigmatised mental condition.',
 
-    r'\b(dumb)\b': 'ableist language. Some alternatives: silly, foolish, ignorant, uninformed, ridiculous, pathetic, absurd',
-    r'\b(lame)\b': 'ableist language. Some alternatives: silly, foolish, ridiculous, pathetic, absurd, uncool',
+    r'\b(dumb|dumber|dumbing)\b': 'ableist language. Some alternatives: silly, foolish, ignorant, uninformed, ridiculous, pathetic, absurd',
+    r'\b(lame|lamer|lamest)\b': 'ableist language. Some alternatives: silly, foolish, ridiculous, pathetic, absurd, uncool',
     r'\b(cripple|crippled|crip|crippling)\b': 'ableist language. Some alternatives: broken, not working',
-    r'\b(gimp|gimped|gimping)\b': 'ableist language. Some alternatives: nerf, sabotage',
-    r'\b(brain-dead|smallbrain|small-brained|smallbrained)\b': 'ableist language. Some alternatives: nerf, sabotage',
+    r'\b(gimp|gimped|gimping)\b': 'ableist language. Some alternatives: nerf, sabotage. If you were talking about the GNU Image Manipulation Program then please ignore this automated message.',
+    r'\b(brain-dead|braindead|smallbrain|small-brained|smallbrained|small-brained)\b': 'ableist language. Some alternatives: nerf, sabotage',
     r'\b(special needs|special-needs)\b': 'language rejected by the disabled community. Some alternatives: disabled, developmentally disabled, cognitively disabled, accessibility',
     # Racism and xenophobia
     r'\b(gypsy|gipp|gyp|pikey|piky)\b': 'a racial slur against the Romani people.',
@@ -37,6 +37,7 @@ WARNINGS = {
     r'\b(portagee)\b': 'a slur for people of Portugese origin',
     r'\b(russki)\b': 'a slur for people of Russian origin',
     r'\b(paki|pakki|pak)\b': 'a slur against South Asian people',
+    r'\b(jap)\b': 'a slur against Japanese people',
     r'\b(kaffir|kaffer|kafir|kaffre|kuffar)\b': 'a racial slur against black people.',
 
     r'\b(pc master race)\b': 'a phrase with nazi origins. Consider choosing an alternative.',
@@ -54,7 +55,7 @@ WARNINGS = {
     r'\b(illegal immigrant|illegal alien)\b': 'xenophobic phrasing. Some alternatives are: undocumented immigrant, undocumented person ',
 
  # catchall ableist (No suggestions)
-    r'\b(psycho|psychotic|psychopath|sociopath|maniac|demented)\b': 'ableist language. check out some alternatives! <http://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html> (scroll down)',
+    r'\b(psycho|psychos|psychotic|psychopath|sociopath|maniac|maniacs|demented)\b': 'ableist language. check out some alternatives! <http://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html> (scroll down)',
  # server-specific banned topics
     r'\b(natalie wynn|contrapoints)\b': 'a banned topic on this server.',
     r'\b(chrischan|christine weston chandler|chris chan|chris-chan)\b': 'a banned topic on this server.',
