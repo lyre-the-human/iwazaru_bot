@@ -32,11 +32,11 @@ WARNINGS = {
     r'\b(injun|nitchie|neche|neechee|neejee|nitchy|nitchee|nidge|redskin|squaw)\b': 'a racial slur for Native Americans',
     r'\b(kanaka)\b': 'a racial slur for Pacific Islanders',
     r'\b(lubra)\b': 'a racial slur for Australian Aboriginal people',
-    r'\b(mick)\b': 'a racial slur for people of Irish descent',
-    r'\b(polack|polak|polock)\b': 'a racial slur for people of Polish or Slavic origin',
-    r'\b(portagee)\b': 'a racial slur for people of Portugese origin',
+    r'\b(mick)\b': 'a slur for people of Irish descent',
+    r'\b(polack|polak|polock)\b': 'a slur for people of Polish or Slavic origin',
+    r'\b(portagee)\b': 'a slur for people of Portugese origin',
     r'\b(russki)\b': 'a slur for people of Russian origin',
-    r'\b(paki|pakki|pak)\b': 'a slur against Pakistanis and Middle-Easterners in general',
+    r'\b(paki|pakki|pak)\b': 'a slur against South Asian people',
     r'\b(kaffir|kaffer|kafir|kaffre|kuffar)\b': 'a racial slur against black people.',
 
     r'\b(pc master race)\b': 'a phrase with nazi origins. Consider choosing an alternative.',
@@ -55,6 +55,10 @@ WARNINGS = {
 
  # catchall ableist (No suggestions)
     r'\b(psycho|psychotic|psychopath|sociopath|maniac|demented)\b': 'ableist language. check out some alternatives! <http://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html> (scroll down)',
+ # server-specific banned topics
+    r'\b(natalie wynn|contrapoints)\b': 'a banned topic on this server.',
+    r'\b(chrischan|christine weston chandler|chris chan|chris-chan)\b': 'a banned topic on this server.',
+    r'\b(lily cade)\b': 'a banned topic on this server.',
 }
 
 #GUYS_RESPONSE = """Many people feel excluded when you refer to a group of people as "Guys".
