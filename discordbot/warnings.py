@@ -21,7 +21,7 @@ WARNINGS = {
     r'\b(lame|lamer|lamest)\b': 'ableist language. Some alternatives: silly, foolish, ridiculous, pathetic, absurd, uncool',
     r'\b(cripple|crippled|crip|crippling)\b': 'ableist language. Some alternatives: broken, not working',
     r'\b(gimp|gimped|gimping)\b': 'ableist language. Some alternatives: nerf, sabotage. If you were talking about the GNU Image Manipulation Program then please ignore this automated message.',
-    r'\b(brain-dead|braindead|smallbrain|small-brained|smallbrained|small-brained)\b': 'ableist language. Some alternatives: nerf, sabotage',
+    r'\b(brain-dead|braindead|smallbrain|small-brained|smallbrained|small-brained)\b': 'ableist language. Some alternatives: thoughtless, ill-planned, ridiculous, uninspired',
     r'\b(special needs|special-needs)\b': 'language rejected by the disabled community. Some alternatives: disabled, developmentally disabled, cognitively disabled, accessibility',
     # Racism and xenophobia
     r'\b(gypsy|gipp|gyp|pikey|piky)\b': 'a racial slur against the Romani people.',
