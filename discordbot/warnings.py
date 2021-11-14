@@ -17,7 +17,7 @@ WARNINGS = {
     r'\b(narcissistic|narcissist)\b': 'ableist language. Some alternatives: self-centred, egotistical, self-absorbed',
     r'\b(narcissistic abuse)\b': 'ableist language which contributes to an already highly-stigmatised mental condition.',
 
-    r'\b(dumb|dumber|dumbing)\b': 'ableist language. Some alternatives: silly, foolish, ignorant, uninformed, ridiculous, pathetic, absurd',
+    r'\b(dumb|dumber|dumbing|dumbasses|dumbass)\b': 'ableist language. Some alternatives: silly, foolish, ignorant, uninformed, ridiculous, pathetic, absurd',
     r'\b(lame|lamer|lamest)\b': 'ableist language. Some alternatives: silly, foolish, ridiculous, pathetic, absurd, uncool',
     r'\b(cripple|crippled|crip|crippling)\b': 'ableist language. Some alternatives: broken, not working',
     r'\b(gimp|gimped|gimping)\b': 'ableist language. Some alternatives: nerf, sabotage. If you were talking about the GNU Image Manipulation Program then please ignore this automated message.',
