@@ -5,8 +5,8 @@ WARNINGS = {
     r'\b(hunty|werk|yass|gawd|kont)\b': 'a word which originates with queer AAVE but has been misappropriated.',
     
     # Ableism and Saneism
-    r'\b(stupid|stupidity|stupidness|stupider)\b': 'ableist language. Some alternatives: pathetic, uninspiring, vapid, obtuse, silly',
-    r'\b(crazy|craziness|crazier|crazies)\b': 'ableist language. Some alternatives are ludicrous, wild, ridiculous, absurd, chaotic, silly, nonsensical, unreal, unbelievable',
+    r'\b(stupid|stupidity|stupidness|stupider|stupidest)\b': 'ableist language. Some alternatives: pathetic, uninspiring, vapid, obtuse, silly',
+    r'\b(crazy|craziness|crazier|craziest|crazies)\b': 'ableist language. Some alternatives are ludicrous, wild, ridiculous, absurd, chaotic, silly, nonsensical, unreal, unbelievable',
     r'\b(insane|insanity|insanest)\b': 'ableist language. Some alternatives: ludicrous, wild, ridiculous, absurd, chaotic, silly, nonsensical, unreal, unbelievable',
     r'\b(idiot|idiots|idiotic|imbecile|imbeciles|moron|morons|moronic|lunatic|lunatics|lunacy)\b': 'ableist language. Some alternatives: uninformed, ignorant, incorrect, wrong',
     r'\b(cretin|midget|spazzed|spazzing|spaz|bonkers)\b': 'ableist language. check out some alternatives! <http://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html> (scroll down)',
@@ -55,7 +55,7 @@ WARNINGS = {
     r'\b(illegal immigrant|illegal alien)\b': 'xenophobic phrasing. Some alternatives are: undocumented immigrant, undocumented person ',
 
  # catchall ableist (No suggestions)
-    r'\b(psycho|psychos|psychotic|psychopath|sociopath|maniac|maniacs|demented)\b': 'ableist language. check out some alternatives! <http://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html> (scroll down)',
+    r'\b(psycho|psychos|psychotic|psychopath|sociopath|sociopathic|maniac|maniacs|demented)\b': 'ableist language. check out some alternatives! <http://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html> (scroll down)',
  # server-specific banned topics
     r'\b(natalie wynn|contrapoints)\b': 'a banned topic on this server.',
     r'\b(chrischan|christine weston chandler|chris chan|chris-chan)\b': 'a banned topic on this server.',
